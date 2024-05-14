@@ -1,7 +1,17 @@
+/**
+ * Clase que representa la compra de Huevos Sorpresa, con el numero de unidades, precio actual,
+ * precio máximo y nombre que incluye la sorpresa
+ */
 package huevoSorpresa;
-public class HuevoSorpresaHugo {
 
+/**
+ * 
+ * @author PCHugo
+ */
+public class HuevoSorpresaHugo {
+    
     /**
+     * Devuelve las unidades
      * @return the unidades
      */
     public int getUnidades() {
@@ -9,49 +19,49 @@ public class HuevoSorpresaHugo {
     }
 
     /**
-     * @param unidades the unidades to set
+     * @param unidades Establece las unidades
      */
     public void setUnidades(int unidades) {
         this.unidades = unidades;
     }
 
     /**
-     * @return the precio
+     * @return obtención del precio
      */
     public double getPrecio() {
         return precio;
     }
 
     /**
-     * @param precio the precio to set
+     * @param precio Establecer precio
      */
     public void setPrecio(double precio) {
         this.precio = precio;
     }
 
     /**
-     * @return the sorpresa
+     * @return Devuelve la sorpresa
      */
     public String getSorpresa() {
         return sorpresa;
     }
 
     /**
-     * @param sorpresa the sorpresa to set
+     * @param sorpresa Establecer sorpresa
      */
     public void setSorpresa(String sorpresa) {
         this.sorpresa = sorpresa;
     }
 
     /**
-     * @return the precio_max
+     * @return Devuelve el precio máximo
      */
     public double getPrecio_max() {
         return precio_max;
     }
 
     /**
-     * @param precio_max the precio_max to set
+     * @param precio_max Establecemos el precio máximo
      */
     public void setPrecio_max(double precio_max) {
         this.precio_max = precio_max;
@@ -63,7 +73,13 @@ public class HuevoSorpresaHugo {
     
     
 public HuevoSorpresaHugo(){}
-
+/**
+ * 
+ * @param unidades Metodo que nos dice la cantidad de huevos
+ * @param precio Metodo donde obtenemos el precio de cada huevo
+ * @param sorpresa Metodo donde sacamos el nombre de la sorpresa
+ * @param precio_max Metodo para dar un precio máximo que se le puede dar a un huevo
+ */
 
 public HuevoSorpresaHugo(int unidades, double precio, String sorpresa, double precio_max){
     this.unidades=unidades;
@@ -72,15 +88,30 @@ public HuevoSorpresaHugo(int unidades, double precio, String sorpresa, double pr
     this.precio_max=precio_max;
 }
 
-
+/**
+ * 
+ * @return Devuelve las unidades obtenidas
+ */
 public int obtenerUnidades(){return this.getUnidades();}
 
-
+/**
+ * 
+ * @return Devuelve el precio obtenido
+ */
 public double obtenerPrecio(){return this.getPrecio();}
 
-
+/**
+ * 
+ * @param unidades Metodo de Modificacion de las Unidades
+ */
 public void modificarUnidades(int unidades){this.setUnidades(unidades);}
 
+/**
+ * 
+ * @param unidades Huevos sacados
+ * @param dinero Dinero que tenemo actualmente
+ * @throws Exception Lanza una excepcion para indicar que no quedan huevos sorpresa en la tienda
+ */
 public void sacarHuevosSorpresas(int unidades, double dinero) throws Exception{
    String sorpresa = "Mininon";
     if (dinero <= 0) {
@@ -98,7 +129,11 @@ public void sacarHuevosSorpresas(int unidades, double dinero) throws Exception{
     this.modificarUnidades(this.obtenerUnidades()-unidades);
 }
 
-
+/**
+ * 
+ * @param aumento Metodo para umentar el precio a un Huevo Sorpresa
+ * @throws Exception Lanza una excepcion indicando que no se puede aumentar el precio ya que no se puede superar el máximo
+ */
 public void aumentarPrecio(double aumento) throws Exception{
     if(aumento <= 0) {
         throw new Exception("El aumento debe ser positivo");
